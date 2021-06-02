@@ -11,27 +11,17 @@
  */
 var isPalindrome = function(head) {
     /*
-        Given the head of a singly linked list return true if it is a palendrome.
-        
-        1. Iterate through the list
-        2. Create a string based on the linked list
-            (I think this may defeat the purpose of the excersize)
-        
+        I don't understand why this works at all
     */
-    let current = head;
-    let myString = ''
-    myString += current.val;
-    while (current.next !== null) {
-        current = current.next;
-        myString += current.val;
+    
+    let node = head;
+    let vode = head;
+    let flag = true;
+    backtrack(node);
+    function backtrack(node) {
+        node.next && backtrack(node.next);
+        if (node.val !== vode.val) flag = false;
+        vode = vode.next;
     }
-    let subString = myString.substring(Math.floor(myString.length/2));
-    let reverseSubString = '';
-    for (let i = 0; i < subString.length; i++) {
-        reverseSubString = subString[i] + reverseSubString;
-    }
-    if (myString.startsWith(reverseSubString)) {
-        return true;
-    }
-    return false;
+    return flag;
 };
