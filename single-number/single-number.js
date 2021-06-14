@@ -9,15 +9,7 @@ var singleNumber = function(nums) {
     if (nums.length === 1) {
         return nums[0];
     }
-    nums = nums.sort((a, b) => {
-        if (a < b) {
-            return -1;
-        }
-        if (a > b) {
-            return 1;
-        }
-        return 0;
-    });
+    nums = nums.sort();
     
     for (let i = 1; i < nums.length; i++) {
         if(i % 2 !== 0 && nums[i] !== nums[i-1]) {
