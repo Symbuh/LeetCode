@@ -3,21 +3,20 @@
  * @return {number}
  */
 var reverse = function(x) {
-    let negative = false;
+    var reverseX = 0;
+    var sign = x < 0;
+    // Remove the negative once we've stored our sign
+    x = Math.abs(x);
     
-    if (x < 0) {
-        negative = true;
+    while (x) {
+        // Simple didgit manipulation I need to try to implement 
+        // more of these on my own without use of strings
+        reverseX = reverseX * 10 + (x % 10);
+        x = Math.floor(x / 10);
     }
     
-    x = +String(Math.abs(x)).split("").reverse().join("");
-    
-    if (negative === true) {
-        x = "-" + x;
-    }
-    
-    x = Number.parseInt(x);
-    
-    if (x < (Math.pow(2, 31) * -1) || x > Math.pow(2, 31) - 1) return 0;
-    
-    return x;
+    if (reverseX < (Math.pow(2, 31) * -1) || reverseX > Math.pow(2, 31) - 1){
+        return 0;
+    } 
+    return sign ? -reverseX : reverseX
 };
