@@ -10,13 +10,10 @@ var findMedianSortedArrays = function(nums1, nums2) {
     
     let median;
     let midPoint;
-    // Not sure if we need to floor this 
     if ((nums1.length) % 2 === 0) {
-        
         midPoint = Math.floor((nums1.length - 1 ) / 2);
         median = (nums1[midPoint] + nums1[midPoint + 1]) / 2;
     } else {
-        // Prolly need to floor this or something though.
         midPoint = Math.floor((nums1.length - 1) / 2);
         median = nums1[midPoint];
     }
