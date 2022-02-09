@@ -34,7 +34,6 @@ var lengthOfLongestSubstring = function(s) {
             }
             curr = curr.split(s[i])[curr.split(s[i]).length - 1] + s[i]
         }
-        console.log(curr)
     }
     return longest
 };
