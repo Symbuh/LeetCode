@@ -12,16 +12,8 @@ var lengthOfLongestSubstring = function(s) {
     
     for (let i = 0; i < s.length; i++) {
         /*
-            We need to check every single character in the string
-            
-            Not really sure why this isn't working. 
-            an array of length 2 is returning 0
-            
-            It's because there was a chance that we never hit 
-            our else case. 
-            
-            Wow there's even a case for backtracking to the 
-            previous before the repeat rough
+            This solution could deffinately be optomized. 
+            Memory usage is scoring very low
         */
         if (!curr.includes(s[i])) {
            curr = curr + s[i]
