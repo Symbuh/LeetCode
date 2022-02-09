@@ -24,7 +24,7 @@ var lengthOfLongestSubstring = function(s) {
             if (longest < curr.length) {
                 longest = curr.length
             }
-            curr = curr.split(s[i])[curr.split(s[i]).length - 1] + s[i]
+            curr = curr.split(s[i]).pop() + s[i]
         }
     }
     return longest
