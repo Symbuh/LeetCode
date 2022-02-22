@@ -3,15 +3,7 @@
  * @return {number}
  */
 var romanToInt = function(s) {
-    /*
-        1 iterate through all the didgets 
-            - On each iteration 
-            
-        Input: roman numeral
-        Output: integer string
-        Constraints: String length is 15
-        Edge Cases: 4 and 9, 40 and 90, 400 and 900
-    */
+    
     let memo = {
         I: 1,
         V: 5, 
@@ -24,7 +16,7 @@ var romanToInt = function(s) {
     
     let output = 0;
     
-    for (let i = s.length - 1; i > -1; i--) {
+    for (let i = s.length - 1; i >= 0; i--) {
         if (i === s.length - 1 || memo[s[i]] >= memo[s[i + 1]]) {
             output = output + memo[s[i]]
         } else {
