@@ -45,11 +45,7 @@ var search = function(nums, target) {
             }
         }
     }
-    
-    // If all direct checks fail we will try to check the entire array. 
-    // I should aim to remove this logic from the problem
-    
-    console.log('Im about to morb!')
+
     for (let i = 0; i < nums.length; i++) {
         if (nums[i] === target) {
             return i;
