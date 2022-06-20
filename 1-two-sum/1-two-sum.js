@@ -4,11 +4,26 @@
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
-    for (let x = 0; x < nums.length; x++) {
-        for (let y = 1; y < nums.length; y++) {
-            if (nums[x] + nums[y] === target && x !== y) {
-                return x > y ? [y, x] : [x, y]
-            }
+    /*
+        Memoized solution
+    */
+    
+    let memo = {}
+    
+    
+    for (let i = 0; i < nums.length; i++) {
+        memo[nums[i]] = i 
+    }
+    
+    let diff;
+    
+    for (let i = 0; i < nums.length; i++) {
+        diff = target - nums[i]
+        console.log(`nums[i]: ${nums[i]} Diff: ${diff} memo[diff]: ${memo[diff]}`)
+        if (memo[diff] && i !== memo[diff]) {
+            return i > memo[diff] ? [memo[diff], i] : [i, memo[diff]]
         }
     }
+    
+    return [-1, -1];
 };
