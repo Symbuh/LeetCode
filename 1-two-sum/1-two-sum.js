@@ -15,7 +15,7 @@ var twoSum = function(nums, target) {
         memo[nums[i]] = i 
     }
     
-    let diff;
+    let diff
     
     for (let i = 0; i < nums.length; i++) {
         diff = target - nums[i]
