@@ -3,15 +3,17 @@
  * @return {boolean}
  */
 var containsDuplicate = function(nums) {
-    let memo = {}
+//     let memo = {}
     
-    for (let i = 0; i < nums.length; i++) {
-        if (memo[nums[i]] !== undefined) {
-            return true;
-        } else {
-            memo[nums[i]] = i
-        }
-    }
+//     for (let i = 0; i < nums.length; i++) {
+//         if (memo[nums[i]] !== undefined) {
+//             return true;
+//         } else {
+//             memo[nums[i]] = i
+//         }
+//     }
     
-    return false;
+//     return false;
+    
+    return nums.length !== new Set(nums).size
 };
