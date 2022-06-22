@@ -4,12 +4,23 @@
  */
 var containsDuplicate = function(nums) {
     
-    nums = nums.sort();
+    /*
+        this is pretty slow I think 
+        
+        We shouldn't have to sort it we just add each value to a memo as we walk through it 
+        
+        Maybe memoization is a core concept of programming
+    */
     
-    for (let i = 1; i < nums.length; i++) {
-        if(nums[i-1] === nums[i]) {
+    let memo = {}
+    
+    for (let i = 0; i < nums.length; i++) {
+        if (memo[nums[i]] !== undefined) {
             return true;
+        } else {
+            memo[nums[i]] = i
         }
     }
+    
     return false;
 };
