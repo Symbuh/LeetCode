@@ -51,7 +51,6 @@ var threeSum = function(nums) {
         
         output = findTwoSumsWithoutTarget(nums, nums[i]).concat(output)
     }
-    console.log(output)
     
     return output;
 };
