@@ -16,7 +16,7 @@ class Solution:
                     return False
                 
                 if queue[len(queue) - 1] == char: 
-                    queue.pop()
+                    del queue[-1]
                 else: 
                     return False
                 
