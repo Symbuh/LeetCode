@@ -7,11 +7,6 @@
  * }
  */
 func invertTree(root *TreeNode) *TreeNode {
-    /*
-        Okay this should be pretty simple 
-            We just need to check the left and right node 
-            and then swap the left and the right for each node. 
-    */
     var helper func(node *TreeNode)
     
     helper = func(node *TreeNode) {
